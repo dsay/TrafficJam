@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1102DB9F16DEEE96005D7754 /* veronica144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 1102DB9E16DEEE96005D7754 /* veronica144x144.png */; };
+		1102DBA316DEF3BE005D7754 /* DSGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1102DBA216DEF3BE005D7754 /* DSGameManager.m */; };
+		1197C8B516E046D80078CFFC /* Round1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1197C8B416E046D80078CFFC /* Round1.plist */; };
+		11A57C3316DEA18300896EFC /* Default-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A57C3216DEA18300896EFC /* Default-Icon.png */; };
 		11B4B8B116DD4F9800CBAD4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B4B8B016DD4F9800CBAD4E /* UIKit.framework */; };
 		11B4B8B316DD4F9800CBAD4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B4B8B216DD4F9800CBAD4E /* Foundation.framework */; };
 		11B4B8B516DD4F9800CBAD4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B4B8B416DD4F9800CBAD4E /* CoreGraphics.framework */; };
@@ -19,9 +23,20 @@
 		11B4B8CA16DD4F9900CBAD4E /* DSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B4B8C916DD4F9900CBAD4E /* DSViewController.m */; };
 		11B4B8CD16DD4F9900CBAD4E /* DSViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B4B8CB16DD4F9900CBAD4E /* DSViewController_iPhone.xib */; };
 		11B4B8D016DD4F9900CBAD4E /* DSViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B4B8CE16DD4F9900CBAD4E /* DSViewController_iPad.xib */; };
+		11B4B8D816DD542900CBAD4E /* DSRock.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B4B8D716DD542900CBAD4E /* DSRock.m */; };
+		11B4B8F116DD5A5300CBAD4E /* DSGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B4B8F016DD5A5300CBAD4E /* DSGameView.m */; };
+		11B4B90216DD989300CBAD4E /* bg_calendar_cell_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B4B90016DD989300CBAD4E /* bg_calendar_cell_active.png */; };
+		11B4B90316DD989300CBAD4E /* bg_calendar_cell_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B4B90116DD989300CBAD4E /* bg_calendar_cell_active@2x.png */; };
+		11B4B90616DD98DB00CBAD4E /* bg_calendar_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B4B90416DD98DB00CBAD4E /* bg_calendar_cell.png */; };
+		11B4B90716DD98DB00CBAD4E /* bg_calendar_cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B4B90516DD98DB00CBAD4E /* bg_calendar_cell@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1102DB9E16DEEE96005D7754 /* veronica144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veronica144x144.png; sourceTree = "<group>"; };
+		1102DBA116DEF3BE005D7754 /* DSGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSGameManager.h; sourceTree = "<group>"; };
+		1102DBA216DEF3BE005D7754 /* DSGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSGameManager.m; sourceTree = "<group>"; };
+		1197C8B416E046D80078CFFC /* Round1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Round1.plist; sourceTree = "<group>"; };
+		11A57C3216DEA18300896EFC /* Default-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Icon.png"; sourceTree = "<group>"; };
 		11B4B8AC16DD4F9800CBAD4E /* FirstGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B4B8B016DD4F9800CBAD4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		11B4B8B216DD4F9800CBAD4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -39,6 +54,14 @@
 		11B4B8C916DD4F9900CBAD4E /* DSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSViewController.m; sourceTree = "<group>"; };
 		11B4B8CC16DD4F9900CBAD4E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DSViewController_iPhone.xib; sourceTree = "<group>"; };
 		11B4B8CF16DD4F9900CBAD4E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DSViewController_iPad.xib; sourceTree = "<group>"; };
+		11B4B8D616DD542900CBAD4E /* DSRock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSRock.h; sourceTree = "<group>"; };
+		11B4B8D716DD542900CBAD4E /* DSRock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSRock.m; sourceTree = "<group>"; };
+		11B4B8EF16DD5A5300CBAD4E /* DSGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSGameView.h; sourceTree = "<group>"; };
+		11B4B8F016DD5A5300CBAD4E /* DSGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSGameView.m; sourceTree = "<group>"; };
+		11B4B90016DD989300CBAD4E /* bg_calendar_cell_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_calendar_cell_active.png; sourceTree = "<group>"; };
+		11B4B90116DD989300CBAD4E /* bg_calendar_cell_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_calendar_cell_active@2x.png"; sourceTree = "<group>"; };
+		11B4B90416DD98DB00CBAD4E /* bg_calendar_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_calendar_cell.png; sourceTree = "<group>"; };
+		11B4B90516DD98DB00CBAD4E /* bg_calendar_cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_calendar_cell@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +108,7 @@
 		11B4B8B616DD4F9800CBAD4E /* FirstGame */ = {
 			isa = PBXGroup;
 			children = (
+				11B4B90816DD997E00CBAD4E /* GameView */,
 				11B4B8BF16DD4F9800CBAD4E /* DSAppDelegate.h */,
 				11B4B8C016DD4F9800CBAD4E /* DSAppDelegate.m */,
 				11B4B8C816DD4F9900CBAD4E /* DSViewController.h */,
@@ -99,6 +123,8 @@
 		11B4B8B716DD4F9800CBAD4E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1102DB9E16DEEE96005D7754 /* veronica144x144.png */,
+				11A57C3216DEA18300896EFC /* Default-Icon.png */,
 				11B4B8B816DD4F9800CBAD4E /* FirstGame-Info.plist */,
 				11B4B8B916DD4F9800CBAD4E /* InfoPlist.strings */,
 				11B4B8BC16DD4F9800CBAD4E /* main.m */,
@@ -106,8 +132,26 @@
 				11B4B8C216DD4F9900CBAD4E /* Default.png */,
 				11B4B8C416DD4F9900CBAD4E /* Default@2x.png */,
 				11B4B8C616DD4F9900CBAD4E /* Default-568h@2x.png */,
+				11B4B90016DD989300CBAD4E /* bg_calendar_cell_active.png */,
+				11B4B90116DD989300CBAD4E /* bg_calendar_cell_active@2x.png */,
+				11B4B90416DD98DB00CBAD4E /* bg_calendar_cell.png */,
+				11B4B90516DD98DB00CBAD4E /* bg_calendar_cell@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11B4B90816DD997E00CBAD4E /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				11B4B8D616DD542900CBAD4E /* DSRock.h */,
+				11B4B8D716DD542900CBAD4E /* DSRock.m */,
+				11B4B8EF16DD5A5300CBAD4E /* DSGameView.h */,
+				11B4B8F016DD5A5300CBAD4E /* DSGameView.m */,
+				1102DBA116DEF3BE005D7754 /* DSGameManager.h */,
+				1102DBA216DEF3BE005D7754 /* DSGameManager.m */,
+				1197C8B416E046D80078CFFC /* Round1.plist */,
+			);
+			name = GameView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +212,13 @@
 				11B4B8C716DD4F9900CBAD4E /* Default-568h@2x.png in Resources */,
 				11B4B8CD16DD4F9900CBAD4E /* DSViewController_iPhone.xib in Resources */,
 				11B4B8D016DD4F9900CBAD4E /* DSViewController_iPad.xib in Resources */,
+				11B4B90216DD989300CBAD4E /* bg_calendar_cell_active.png in Resources */,
+				11B4B90316DD989300CBAD4E /* bg_calendar_cell_active@2x.png in Resources */,
+				11B4B90616DD98DB00CBAD4E /* bg_calendar_cell.png in Resources */,
+				11B4B90716DD98DB00CBAD4E /* bg_calendar_cell@2x.png in Resources */,
+				11A57C3316DEA18300896EFC /* Default-Icon.png in Resources */,
+				1102DB9F16DEEE96005D7754 /* veronica144x144.png in Resources */,
+				1197C8B516E046D80078CFFC /* Round1.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +232,9 @@
 				11B4B8BD16DD4F9800CBAD4E /* main.m in Sources */,
 				11B4B8C116DD4F9800CBAD4E /* DSAppDelegate.m in Sources */,
 				11B4B8CA16DD4F9900CBAD4E /* DSViewController.m in Sources */,
+				11B4B8D816DD542900CBAD4E /* DSRock.m in Sources */,
+				11B4B8F116DD5A5300CBAD4E /* DSGameView.m in Sources */,
+				1102DBA316DEF3BE005D7754 /* DSGameManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +325,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FirstGame/FirstGame-Prefix.pch";
 				INFOPLIST_FILE = "FirstGame/FirstGame-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -282,6 +337,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FirstGame/FirstGame-Prefix.pch";
 				INFOPLIST_FILE = "FirstGame/FirstGame-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -306,6 +362,7 @@
 				11B4B8D516DD4F9900CBAD4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
