@@ -6,7 +6,7 @@ typedef enum
 {
     DSRockTypeBorderBlocks = 0,
     DSRockTypeMainBlocks,
-    DSRockTypeElementBoubleBlocks,
+    DSRockTypeElementDoubleBlocks,
     DSRockTypeElementTripleBlocks
     
 }DSRockType;

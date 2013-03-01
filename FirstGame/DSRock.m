@@ -23,7 +23,7 @@
         case DSRockTypeMainBlocks:
             _countBlocks = 2;
             break;
-        case DSRockTypeElementBoubleBlocks:
+        case DSRockTypeElementDoubleBlocks:
             _countBlocks = 2;
             break;
         case DSRockTypeElementTripleBlocks:
@@ -75,7 +75,7 @@
         case DSRockTypeMainBlocks:
             image = [UIImage imageNamed:@"veronica144x144"];
             break;
-        case DSRockTypeElementBoubleBlocks:
+        case DSRockTypeElementDoubleBlocks:
         case DSRockTypeElementTripleBlocks:
             image = [UIImage imageNamed:@"bg_calendar_cell_active"];
             break;
