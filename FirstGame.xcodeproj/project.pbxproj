@@ -10,6 +10,7 @@
 		1102DB9F16DEEE96005D7754 /* veronica144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 1102DB9E16DEEE96005D7754 /* veronica144x144.png */; };
 		1102DBA316DEF3BE005D7754 /* DSGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1102DBA216DEF3BE005D7754 /* DSGameManager.m */; };
 		1197C8B516E046D80078CFFC /* Round1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1197C8B416E046D80078CFFC /* Round1.plist */; };
+		1197C8C416E04F580078CFFC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1197C8C316E04F580078CFFC /* QuartzCore.framework */; };
 		11A57C3316DEA18300896EFC /* Default-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A57C3216DEA18300896EFC /* Default-Icon.png */; };
 		11B4B8B116DD4F9800CBAD4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B4B8B016DD4F9800CBAD4E /* UIKit.framework */; };
 		11B4B8B316DD4F9800CBAD4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B4B8B216DD4F9800CBAD4E /* Foundation.framework */; };
@@ -36,6 +37,7 @@
 		1102DBA116DEF3BE005D7754 /* DSGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSGameManager.h; sourceTree = "<group>"; };
 		1102DBA216DEF3BE005D7754 /* DSGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSGameManager.m; sourceTree = "<group>"; };
 		1197C8B416E046D80078CFFC /* Round1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Round1.plist; sourceTree = "<group>"; };
+		1197C8C316E04F580078CFFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		11A57C3216DEA18300896EFC /* Default-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Icon.png"; sourceTree = "<group>"; };
 		11B4B8AC16DD4F9800CBAD4E /* FirstGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B4B8B016DD4F9800CBAD4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1197C8C416E04F580078CFFC /* QuartzCore.framework in Frameworks */,
 				11B4B8B116DD4F9800CBAD4E /* UIKit.framework in Frameworks */,
 				11B4B8B316DD4F9800CBAD4E /* Foundation.framework in Frameworks */,
 				11B4B8B516DD4F9800CBAD4E /* CoreGraphics.framework in Frameworks */,
@@ -81,6 +84,7 @@
 		11B4B8A116DD4F9800CBAD4E = {
 			isa = PBXGroup;
 			children = (
+				1197C8C316E04F580078CFFC /* QuartzCore.framework */,
 				11B4B8B616DD4F9800CBAD4E /* FirstGame */,
 				11B4B8AF16DD4F9800CBAD4E /* Frameworks */,
 				11B4B8AD16DD4F9800CBAD4E /* Products */,

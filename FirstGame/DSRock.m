@@ -1,4 +1,5 @@
 #import "DSRock.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface DSRock ()
 {
@@ -39,6 +40,10 @@
     {
         _direction = direction;
         type = _type;
+        self.layer.cornerRadius = 25;
+        self.layer.masksToBounds = YES;
+        self.layer.borderColor = [UIColor blackColor].CGColor;
+        self.layer.borderWidth = 1;
         self.backgroundColor = [UIColor lightGrayColor];
     }
     
