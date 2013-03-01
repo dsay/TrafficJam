@@ -35,56 +35,91 @@
 {
     if (rock.countBlocks > 1)
     {
-        int occupied;
+        BOOL incrementCoords;
         
         int oldX = rock.positionOnField.x;
         int oldY = rock.positionOnField.y;
         
         if (rock.direction){
-            occupied = (point.y > 0) ? 1 : -1;
+            incrementCoords = (point.y > 0) ? YES : NO;
+            int howMuchStepsToMove = [self coordsToSteps:point.y];
       
-            if (occupied > 0) {
-                if((position[oldX][oldY + rock.countBlocks ] == 0) && ((oldY + rock.countBlocks ) <= kSize - 1))
+            if (incrementCoords == YES) {
+                if((position[oldX][oldY + rock.countBlocks+howMuchStepsToMove-1] == 0) && ((oldY + rock.countBlocks+howMuchStepsToMove-1) <= kSize - 1))
                 {
-                    position[oldX][oldY] = 0;
-                    position[oldX][oldY + rock.countBlocks] = 1;
-                    rock.positionOnField = CGPointMake(oldX , oldY + 1);
-                     return CGPointMake(0, kHeigthBranch * occupied);
+                    for (int yCounter = 0; yCounter < howMuchStepsToMove; yCounter++)
+                    {
+                        position[oldX][oldY+yCounter] = 0;
+                    
+                        position[oldX][oldY + rock.countBlocks+yCounter] = 1;
+                    }
+                    rock.positionOnField = CGPointMake(oldX , oldY + howMuchStepsToMove);
+                    return CGPointMake(0, kHeigthBranch * howMuchStepsToMove);
                 }
-            }else{
-                if((position[oldX][oldY - 1] == 0)&&((oldY - 1) >= 0))
+            }else
+            {
+                if((position[oldX][oldY - howMuchStepsToMove] == 0)&&((oldY - 1) >= 0))
                 {
-                    position[oldX][oldY - 1] = 1;
-                    position[oldX][oldY + rock.countBlocks - 1] = 0;
-                    rock.positionOnField = CGPointMake(oldX, oldY - 1);
-                     return CGPointMake(0, kHeigthBranch * occupied);
+                    for (int yCounter = 0; yCounter < howMuchStepsToMove; yCounter++)
+                    {
+                        position[oldX][oldY - yCounter + rock.countBlocks-1] = 0;
+                        
+                        position[oldX][oldY - yCounter] = 1;
+                    }
+                    rock.positionOnField = CGPointMake(oldX, oldY - howMuchStepsToMove);
+                    return CGPointMake(0, -kHeigthBranch * howMuchStepsToMove);
                 }
             }
         }else
         {
-            occupied = (point.x > 0) ? 1 : -1;
+            incrementCoords = (point.x > 0) ? YES : NO;
+            int howMuchStepsToMove = [self coordsToSteps:point.x];
             
-            if (occupied > 0) {
-                if((position[oldX + rock.countBlocks ][oldY] == 0)&&((oldX + rock.countBlocks ) <= kSize - 1))
+            if (incrementCoords == YES) {
+                if((position[oldX + rock.countBlocks + howMuchStepsToMove -1][oldY] == 0)&&((oldX + rock.countBlocks +howMuchStepsToMove-1) <= kSize - 1))
                 {
-                    position[oldX][oldY] = 0;
-                    position[oldX + rock.countBlocks ][oldY] = 1;
-                    rock.positionOnField = CGPointMake(oldX + 1, oldY);
-                    return CGPointMake(kHeigthBranch * occupied, 0);
+                    for (int xCounter = 0; xCounter < howMuchStepsToMove; xCounter++)
+                    {
+                        position[oldX+xCounter][oldY] = 0;
+                        
+                        position[oldX+rock.countBlocks+xCounter][oldY] = 1;
+                    }
+                    rock.positionOnField = CGPointMake(oldX + howMuchStepsToMove, oldY);
+                    return CGPointMake(kHeigthBranch * howMuchStepsToMove, 0);
                 }
             }else
-                if((position[oldX - 1][oldY] == 0)&&((oldX - 1) >= 0))
+            {
+                if((position[oldX - howMuchStepsToMove][oldY] == 0)&&((oldX - howMuchStepsToMove) >= 0))
                 {
-                    position[oldX - 1][oldY]= 1;
-                    position[oldX + rock.countBlocks - 1][oldY] = 0;
-                    rock.positionOnField = CGPointMake(oldX - 1, oldY);
-                    return CGPointMake(kHeigthBranch * occupied, 0);
+                    for (int xCounter = 0; xCounter < howMuchStepsToMove; xCounter++)
+                    {
+                        position[oldX - xCounter + rock.countBlocks-1][oldY] = 0;
+                        
+                        position[oldX - xCounter][oldY] = 1;
+                    }
+                    rock.positionOnField = CGPointMake(oldX - howMuchStepsToMove, oldY);
+                    return CGPointMake(-kHeigthBranch * howMuchStepsToMove, 0);
                 }
+            }
             
         }
     
     }
    return CGPointZero; 
+}
+
+- (int)coordsToSteps:(float)offset
+{
+    float rate = abs(offset/kHeigthBranch);
+    if (rate < 1.0)
+    {
+        rate = 1.0;
+    }
+    if (rate > kSize - 2)
+    {
+        rate = kSize - 2;
+    }
+    return round(rate);
 }
 
 @end
