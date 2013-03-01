@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#define kSize 6
+
 @class DSRock;
 
 @interface DSGameManager : NSObject
