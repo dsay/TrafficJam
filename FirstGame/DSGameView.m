@@ -75,6 +75,14 @@
         [UIView animateWithDuration:.25 animations:^{
             self.selectedView.center = newCenter; 
         }];
+        
+        if ((self.selectedView == self.baseRock)&&(newCenter.x == kHeigthBranch * (kSize - 1) ))
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WIN!!!" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+       
+        }
+
     }
 }
 
@@ -99,6 +107,18 @@ CGPoint CGPointAdd(CGPoint p1, CGPoint p2)
     UIImage *image = [UIImage imageNamed:@"bg_calendar_cell"];
 	CGRect imageRect = CGRectMake(0, 0, kHeigthBranch,  kHeigthBranch);
 	CGContextDrawTiledImage(context, imageRect, image.CGImage);
+    
+   
+    CGContextSetLineWidth(context, 4.0f);
+    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+    CGFloat components[] = {0.0f, 0.0f, 1.0f, 1.0f};
+    CGColorRef color = CGColorCreate(colorspace, components);
+    CGContextSetStrokeColorWithColor(context, color);
+    CGContextMoveToPoint(context, 598.0f, 200.0f);
+    CGContextAddLineToPoint(context, 598, 300.0f);
+    CGContextStrokePath(context);
+    CGColorSpaceRelease(colorspace);
+    CGColorRelease(color);
 }
 
 - (DSRock *)baseRock

@@ -1,8 +1,6 @@
 #import "DSGameManager.h"
 #import "DSRock.h"
 
-#define kSize 6
-
 @interface DSGameManager ()
 {
   int  position[kSize][kSize];
