@@ -2,8 +2,6 @@
 #import "DSRock.h"
 #import "DSGameManager.h"
 
-#define kHeigthBranch 100
-
 @interface DSGameView ()<UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
@@ -31,12 +29,6 @@
     return self;
 }
 
-- (void)addSubview:(UIView *)view
-{
-    [self.rocks addObject:view];
-    [super addSubview:view];
-}
-
 - (void)setupField
 {
     [self addSubview:self.baseRock];
@@ -55,6 +47,12 @@
         [[DSGameManager shared] addBlockToField:rock];
         [self addSubview:rock];
     }
+    
+//    DSRock *rock = [[DSRock alloc] initWithBranchCount:3 directionToDown:YES];
+//    [rock moveCenterToIndexX:4 y:0];
+//    [[DSGameManager shared] addBlockToField:rock];
+//    [self addSubview:rock];
+    
 }
 
 - (void)pan:(UIPanGestureRecognizer *)gesture
@@ -64,8 +62,7 @@
         CGPoint locationPoint = [gesture locationInView:self];
         self.selectedView = [self isPositionOccupied:locationPoint];
     }
-    
-    
+
     if (gesture.state == UIGestureRecognizerStateEnded)
     {
         CGPoint translationPoint = [gesture translationInView:self];
@@ -82,8 +79,13 @@
             [alert show];
        
         }
-
     }
+}
+
+- (void)addSubview:(UIView *)view
+{
+    [self.rocks addObject:view];
+    [super addSubview:view];
 }
 
 - (DSRock *)isPositionOccupied:(CGPoint)point
