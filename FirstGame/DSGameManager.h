@@ -9,5 +9,8 @@
 + (DSGameManager *)shared;
 - (CGPoint)isCanReplaceRock:(DSRock *)rock point:(CGPoint)point;
 - (void)addBlockToField:(DSRock *)rock;
+- (void)cancelMove;
+- (int)steps;
+- (void)reloadField;
 
 @end

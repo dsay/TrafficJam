@@ -11,24 +11,33 @@
 
 @interface DSViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *roundNumber;
+@property (nonatomic, strong)DSGameView *rock1;
+
 @end
 
 @implementation DSViewController
+
+@synthesize rock1 = rock1;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
-    DSGameView *rock1 = [[DSGameView alloc] initWithFrame:CGRectMake(0, 0, 600, 600)];
-    
-    
-//    DSRock *rock2 = [[DSRock alloc] initWithBranchCount:3 directionToDown:NO];
-//    
-//    
+    rock1 = [[DSGameView alloc] initWithFrame:CGRectMake(0, 0, 600, 600)];
+    rock1.newRound = ^ (int number){
+        self.roundNumber.text = [NSString stringWithFormat:@"%d", number];
+    };
+ 
     [self.view addSubview:rock1];
-//    [self.view addSubview:rock2];
-	// Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)ctrZ:(id)sender
+{
+    [rock1 cancelMove];
+}
+- (IBAction)anewRound:(id)sender
+{
+    [rock1 enewRound];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,4 +46,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setRoundNumber:nil];
+    [super viewDidUnload];
+}
 @end

@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		1102DB9F16DEEE96005D7754 /* veronica144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 1102DB9E16DEEE96005D7754 /* veronica144x144.png */; };
 		1102DBA316DEF3BE005D7754 /* DSGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1102DBA216DEF3BE005D7754 /* DSGameManager.m */; };
-		1197C8B516E046D80078CFFC /* Round1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1197C8B416E046D80078CFFC /* Round1.plist */; };
+		1197C8B516E046D80078CFFC /* Rounds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1197C8B416E046D80078CFFC /* Rounds.plist */; };
 		1197C8C416E04F580078CFFC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1197C8C316E04F580078CFFC /* QuartzCore.framework */; };
 		11A57C3316DEA18300896EFC /* Default-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A57C3216DEA18300896EFC /* Default-Icon.png */; };
+		11A9AD9B16E4492B0058B0FC /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A9AD9916E4492B0058B0FC /* images.png */; };
+		11A9AD9C16E4492B0058B0FC /* images (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 11A9AD9A16E4492B0058B0FC /* images (1).png */; };
 		11B4B8B116DD4F9800CBAD4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B4B8B016DD4F9800CBAD4E /* UIKit.framework */; };
 		11B4B8B316DD4F9800CBAD4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B4B8B216DD4F9800CBAD4E /* Foundation.framework */; };
 		11B4B8B516DD4F9800CBAD4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B4B8B416DD4F9800CBAD4E /* CoreGraphics.framework */; };
@@ -36,9 +38,11 @@
 		1102DB9E16DEEE96005D7754 /* veronica144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veronica144x144.png; sourceTree = "<group>"; };
 		1102DBA116DEF3BE005D7754 /* DSGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSGameManager.h; sourceTree = "<group>"; };
 		1102DBA216DEF3BE005D7754 /* DSGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSGameManager.m; sourceTree = "<group>"; };
-		1197C8B416E046D80078CFFC /* Round1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Round1.plist; sourceTree = "<group>"; };
+		1197C8B416E046D80078CFFC /* Rounds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Rounds.plist; sourceTree = "<group>"; };
 		1197C8C316E04F580078CFFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		11A57C3216DEA18300896EFC /* Default-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Icon.png"; sourceTree = "<group>"; };
+		11A9AD9916E4492B0058B0FC /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
+		11A9AD9A16E4492B0058B0FC /* images (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "images (1).png"; sourceTree = "<group>"; };
 		11B4B8AC16DD4F9800CBAD4E /* FirstGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B4B8B016DD4F9800CBAD4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		11B4B8B216DD4F9800CBAD4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +131,8 @@
 		11B4B8B716DD4F9800CBAD4E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				11A9AD9916E4492B0058B0FC /* images.png */,
+				11A9AD9A16E4492B0058B0FC /* images (1).png */,
 				1102DB9E16DEEE96005D7754 /* veronica144x144.png */,
 				11A57C3216DEA18300896EFC /* Default-Icon.png */,
 				11B4B8B816DD4F9800CBAD4E /* FirstGame-Info.plist */,
@@ -153,7 +159,7 @@
 				11B4B8F016DD5A5300CBAD4E /* DSGameView.m */,
 				1102DBA116DEF3BE005D7754 /* DSGameManager.h */,
 				1102DBA216DEF3BE005D7754 /* DSGameManager.m */,
-				1197C8B416E046D80078CFFC /* Round1.plist */,
+				1197C8B416E046D80078CFFC /* Rounds.plist */,
 			);
 			name = GameView;
 			sourceTree = "<group>";
@@ -222,7 +228,9 @@
 				11B4B90716DD98DB00CBAD4E /* bg_calendar_cell@2x.png in Resources */,
 				11A57C3316DEA18300896EFC /* Default-Icon.png in Resources */,
 				1102DB9F16DEEE96005D7754 /* veronica144x144.png in Resources */,
-				1197C8B516E046D80078CFFC /* Round1.plist in Resources */,
+				1197C8B516E046D80078CFFC /* Rounds.plist in Resources */,
+				11A9AD9B16E4492B0058B0FC /* images.png in Resources */,
+				11A9AD9C16E4492B0058B0FC /* images (1).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,7 +2,10 @@
 #import "DSRock.h"
 #import "DSGameManager.h"
 
-@interface DSGameView ()<UIGestureRecognizerDelegate>
+@interface DSGameView ()<UIAlertViewDelegate>
+{
+    int roundNumber;
+}
 
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
 @property (nonatomic, strong) NSMutableArray *rocks;
@@ -16,6 +19,7 @@
 @synthesize panGesture = _panGesture;
 @synthesize rocks = _rocks;
 @synthesize baseRock = _baseRock;
+@synthesize newRound;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,17 +27,57 @@
     if (self) {
         [self addGestureRecognizer:self.panGesture];
         self.backgroundColor = [UIColor lightGrayColor];
-
+        roundNumber = 1;
         [self setupField];
     }
     return self;
 }
 
+- (void)cancelMove
+{
+    [[DSGameManager shared]cancelMove];
+}
+
+- (void)enewRound
+{
+    [self reloadView];
+    [self setupField];
+}
+
+- (void)nextRound
+{
+    roundNumber ++;
+    self.newRound(roundNumber);
+    [self reloadView];
+    [self setupField];
+}
+
+- (void)reloadView
+{
+    for (UIView *view in self.rocks) {
+        [self.baseRock removeFromSuperview];
+        _baseRock = nil;
+        [view removeFromSuperview];
+    }
+    _rocks = nil;
+    [[DSGameManager shared] reloadField];
+}
+
+- (NSDictionary *)currentRound
+{
+    NSArray *rounds = [[NSArray alloc] initWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"Rounds" ofType: @"plist"]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"RoundNumber == %d" ,roundNumber];
+    NSArray *round = [rounds filteredArrayUsingPredicate:predicate];
+ 
+    return round.lastObject;
+}
+
+
 - (void)setupField
 {
     [self addSubview:self.baseRock];
 
-     NSArray *round = [[NSArray alloc] initWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"Round1" ofType: @"plist"]];
+     NSArray *round = [[self currentRound]objectForKey:@"Elements"];
     
     for (NSDictionary *element in round) {
     
@@ -47,39 +91,43 @@
         [[DSGameManager shared] addBlockToField:rock];
         [self addSubview:rock];
     }
-    
-//    DSRock *rock = [[DSRock alloc] initWithBranchCount:3 directionToDown:YES];
-//    [rock moveCenterToIndexX:4 y:0];
-//    [[DSGameManager shared] addBlockToField:rock];
-//    [self addSubview:rock];
-    
 }
 
 - (void)pan:(UIPanGestureRecognizer *)gesture
 {
+    static CGPoint oldLocation;
     if (gesture.state == UIGestureRecognizerStateBegan)
     {
         CGPoint locationPoint = [gesture locationInView:self];
         self.selectedView = [self isPositionOccupied:locationPoint];
+        oldLocation = self.selectedView.center;
     }
 
     if (gesture.state == UIGestureRecognizerStateEnded)
     {
         CGPoint translationPoint = [gesture translationInView:self];
         CGPoint point = [[DSGameManager shared] isCanReplaceRock:self.selectedView point:translationPoint];
-        CGPoint newCenter = CGPointAdd(self.selectedView.center, point);
-        
-        [UIView animateWithDuration:.25 animations:^{
-            self.selectedView.center = newCenter; 
+        CGPoint newCenter = CGPointAdd(oldLocation, point);
+           
+        [UIView animateWithDuration:.35f animations:^{
+            self.selectedView.center = newCenter;
+        } completion:^(BOOL finished) {
+            if ((self.selectedView == self.baseRock) && (newCenter.x == kHeigthBranch * (kSize - 1) ))
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You WON!!!" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                alert.delegate = self;
+                [alert show];
+                
+                
+            }
         }];
-        
-        if ((self.selectedView == self.baseRock)&&(newCenter.x == kHeigthBranch * (kSize - 1) ))
-        {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WIN!!!" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-       
-        }
     }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex  == 0) 
+        [self nextRound];
 }
 
 - (void)addSubview:(UIView *)view
